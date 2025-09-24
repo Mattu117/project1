@@ -14,7 +14,9 @@ public class Account {
     private Integer accountId;
 
     //  Username and password for login, not secure
+    @Column(unique=true)
     private String username;
+
     private String password;
 
     // One to many relationship 

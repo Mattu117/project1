@@ -31,14 +31,55 @@ public class ProjectService {
     }
 
     // Get Highest Score
-    public int getHightScore(Account account){
-        
+    public int getHightScore(String username){
+        if(!checkUsernameExists(username)){
+            return 0;
+        }
+        Account account = getAccountByUsername(username);
         return account.getHighestScore();
     }
+
     // Get all scores
     public List<ScoreAndName> getAllScores(){
         List<ScoreAndName> scores = scoreRepository.findAllBy();
         return scores;
     }
+
+    // Check if username exists
+    public boolean checkUsernameExists(String username){
+        boolean exists = accountRepository.existsByUsername(username);
+        return exists;
+    }
+
+    // Get Account by login
+    public Account getAccountByUsername(String username){
+        Account account = accountRepository.findByUsername(username);
+        return account;
+    }
+
+    // Login
+
+    public boolean login(String username, String password){
+        if(!checkUsernameExists(username)){
+            return false;
+        }
+        Account account = getAccountByUsername(username);
+        if(account.getPassword().equals(password)){
+            return true;
+        }
+        return false;
+    }
+
+    public boolean createAccount(Account account){
+        if(checkUsernameExists(account.getUsername())){
+            return false;
+        }
+        accountRepository.save(account);
+        return true;
+    }
     // Get all scores from account
+   // public List<Score> getAccountScores(){
+       // List<Score> scores = scoreRepository.findAll();
+      //  return scores;
+   // }
 }

@@ -1,0 +1,48 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 200px;
+    background: black;
+    padding-bottom: 30px;
+}
+
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.text{
+    color:white;
+    font-size: 8000;
+    font-weight: 800;
+}
+
+.underline{
+    width: 16;
+    height: 6;
+    border-radius: 9px;
+    color: white;
+}
+
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    margin:auto;
+    width: 480px;
+    height: 80px;
+    background-color: grey;
+    border-radius: 6px;
+}
