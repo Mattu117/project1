@@ -1,0 +1,13 @@
+.endOverlay{
+    position: fixed;
+    top: center;
+    left: center;
+    width: 45.1%;
+    height: 50%;
+    z-index: 10;
+    background: rgb(63, 63, 63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

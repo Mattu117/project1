@@ -14,7 +14,6 @@ public class Account {
     private Integer accountId;
 
     //  Username and password for login, not secure
-    @Column(unique=true)
     private String username;
 
     private String password;
@@ -25,6 +24,10 @@ public class Account {
 
     // Constructors
     public Account(){}
+
+    public Account(String username){
+        this.username = username;
+    }
 
     public Account(String username, String password){
         this.username = username;

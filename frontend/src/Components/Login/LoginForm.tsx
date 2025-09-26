@@ -1,7 +1,7 @@
 import React from 'react'
 import './LoginForm.css'
 
-export const LoginForm = () => {
+const LoginForm = () => {
   return (
     <>
     <div className='container'>
