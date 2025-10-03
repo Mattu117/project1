@@ -13,7 +13,8 @@ export default function Leaderboard({}: Props) {
     const [users,setUsers] = useState<User[]>([])
 
     async function fetchUsers(): Promise<User[]>{
-        const response = await fetch('http://localhost:8080/leaderboard');
+        const leaderboardURL = import.meta.env.LEADERBOARD_LINK
+        const response = await fetch(leaderboardURL);
         const data = await response.json();
         return data;
     }

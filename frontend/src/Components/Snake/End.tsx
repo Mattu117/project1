@@ -8,7 +8,7 @@ type Props = {
 
 const End = ({score, reset}: Props) => {
   const headers: Headers = new Headers()
-  
+  const scoreURL = import.meta.env.VITE_SCORE_POST
   headers.set('Content-Type','application/json')
 
     const postScore = (e: React.FormEvent<HTMLFormElement>)=>{
@@ -18,7 +18,7 @@ const End = ({score, reset}: Props) => {
       
       let user = {userScore: score, username:name}
       
-      const request: RequestInfo = new Request('http://localhost:8080/score', {
+      const request: RequestInfo = new Request(scoreURL, {
           method: 'POST',
           headers: headers,
           body: JSON.stringify(user)
